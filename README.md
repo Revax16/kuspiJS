@@ -1,3 +1,8 @@
+Name     | Type       | Opt. | Default         | Description
+----     | ----       | ---- | -------         | -----------
+width    | Number     | True | 600            | Width of the canvas
+height   | Number     | True | 400            | Height of the canvas
+parent   | Element    | True | `document.body`| Parent to append the canvas
 # KuspiJS
 Un Game Engine en JS
 
@@ -42,9 +47,7 @@ function update() {                             // À chaque frame
 
 ## Documentation
 
-### Classes
-
-#### KUSPI.Game({setup:setup, update:update})
+### KUSPI.Game({setup:setup, update:update})
 Initialize a new app or game
 Parameters:<br>
 Name     | Type       | Opt. | Default      | Description
@@ -52,7 +55,7 @@ Name     | Type       | Opt. | Default      | Description
 setup    | CallBack   | True | `setup`      | Function call 1 time when the app is initialized
 update   | CallBack   | True | `update`     | Function call on each refresh (60 times per second normally)
 
-##### <Game>.setView(width, height, parent)
+#### \<Game\>.setView(width, height, parent)
 Append the Canvas in the parent and set the width and the height
 Parameters:
 Name     | Type       | Opt. | Default         | Description
@@ -61,7 +64,7 @@ width    | Number     | True | 600            | Width of the canvas
 height   | Number     | True | 400            | Height of the canvas
 parent   | Element    | True | `document.body`| Parent to append the canvas
 
-##### <Game>.appendChild(container)
+#### \<Game\>.appendChild(container)
 Append a container to the app
 Parameters:
 Name     | Type       | Opt.  | Description
