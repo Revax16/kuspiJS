@@ -1,8 +1,8 @@
 # KuspiJS
-Un Game Engine en JS
+Un JS game Engine
 
-## Exemple
-Exemple de Base
+## Example
+Basic Example
 
 ```javascript
 var game = new KUSPI.Game();
