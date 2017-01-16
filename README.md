@@ -235,3 +235,13 @@ Name           | Type          | Opt.  | Default             | Description
 ----           | ----          | ----  | -------             | -----------
 x              | Number        | False | -                   | Position in X
 y              | Number        | False | -                   | Position in Y
+
+#### KUSPI.renderer(renderable, game)
+Render given objects
+
+Parameters:
+
+Name           | Type            | Opt.  | Default             | Description
+----           | ----            | ----  | -------             | -----------
+renderable     | Object or Array | False | -                   | An Entity or Container or an Array of Entities and/or Containers
+game           | Object          | True  | -                   | If only an Entity or Entities are given, required, Represent a Game Object
