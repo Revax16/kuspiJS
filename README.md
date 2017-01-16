@@ -1,13 +1,8 @@
-Name     | Type       | Opt. | Default         | Description
-----     | ----       | ---- | -------         | -----------
-width    | Number     | True | 600            | Width of the canvas
-height   | Number     | True | 400            | Height of the canvas
-parent   | Element    | True | `document.body`| Parent to append the canvas
 # KuspiJS
 Un Game Engine en JS
 
-## Guide
-Exemple de projet
+## Exemple
+Exemple de Base
 
 ```javascript
 var game = new KUSPI.Game();
@@ -49,7 +44,9 @@ function update() {                             // À chaque frame
 
 ### KUSPI.Game({setup:setup, update:update})
 Initialize a new app or game
-Parameters:<br>
+
+Parameters:
+
 Name     | Type       | Opt. | Default      | Description
 -------- | ---------- | ---- | ------------ | -----------
 setup    | CallBack   | True | `setup`      | Function call 1 time when the app is initialized
@@ -57,16 +54,54 @@ update   | CallBack   | True | `update`     | Function call on each refresh (60 
 
 #### \<Game\>.setView(width, height, parent)
 Append the Canvas in the parent and set the width and the height
+
 Parameters:
-Name     | Type       | Opt. | Default         | Description
-----     | ----       | ---- | -------         | -----------
+
+Name     | Type       | Opt. | Default        | Description
+-------- | ---------- | ---- | -------------- | ------------
 width    | Number     | True | 600            | Width of the canvas
 height   | Number     | True | 400            | Height of the canvas
 parent   | Element    | True | `document.body`| Parent to append the canvas
 
 #### \<Game\>.appendChild(container)
 Append a container to the app
+
 Parameters:
+
 Name     | Type       | Opt.  | Description
 ----     | ----       | ----  | -----------
 container| Object     | False | Represent a container
+
+### KUSPI.Container(name, {pos, height, width, gravity, collision})
+Create a new container. A container can store some Entities and apply or not the gravity and collision
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+name           | String        | False | -                   | Name of the container
+prop.pos*      | Vector Object | True  | `KUSPI.vector(0,0)` | Position of the container
+prop.height*   | Number        | True  | \<Game\>.view.height| height of the container
+prop.width*    | Number        | True  | \<Game\>.view.width | Width of the container
+prop.gravity   | Boolean       | True  | False               | Wether or not the gravity is applied
+prop.collision | Boolean       | True  | True                | Wether or not the collisions are applied
+
+#### \<Container\>.setProp({pos, width, height})
+Set new value to the pos, width and/or height of the Container
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+porp.pos       | Vector Object | True  | Current Value       | Change the position of the Container
+porp.width     | Number        | True  | Current Value       | Change the width of the Container
+porp.height    | Number        | True  | Current Value       | Change the height of the Container
+
+#### \<Container\>.appendChild(entities)
+Append an Entity to the Container
+
+Parameters:
+
+Name     | Type            | Opt.  | Description
+----     | ----            | ----  | -----------
+entities | Object or Array | False | An Entity or an Array of Entities
