@@ -42,7 +42,7 @@ function update() {                             // À chaque frame
 
 ## Documentation
 
-### KUSPI.Game({setup:setup, update:update})
+### KUSPI.Game({setup, update})
 Initialize a new app or game
 
 Parameters:
@@ -81,10 +81,12 @@ Name           | Type          | Opt.  | Default             | Description
 ----           | ----          | ----  | -------             | -----------
 name           | String        | False | -                   | Name of the container
 prop.pos*      | Vector Object | True  | `KUSPI.vector(0,0)` | Position of the container
-prop.height*   | Number        | True  | \<Game\>.view.height| height of the container
+prop.height*   | Number        | True  | \<Game\>.view.height| Height of the container
 prop.width*    | Number        | True  | \<Game\>.view.width | Width of the container
 prop.gravity   | Boolean       | True  | False               | Wether or not the gravity is applied
 prop.collision | Boolean       | True  | True                | Wether or not the collisions are applied
+
+\*Not Implemented yet
 
 #### \<Container\>.setProp({pos, width, height})
 Set new value to the pos, width and/or height of the Container
@@ -105,3 +107,131 @@ Parameters:
 Name     | Type            | Opt.  | Description
 ----     | ----            | ----  | -----------
 entities | Object or Array | False | An Entity or an Array of Entities
+
+### KUSPI.Entity(name, {pos, height, width, vel, degree, radian, anchor, gravity, collision})
+Create a new container. A container can store some Entities and apply or not the gravity and collision
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+name           | String        | False | -                   | Name of the Entity
+prop.pos       | Vector Object | True  | `KUSPI.vector(0,0)` | Position of the Entity
+prop.height    | Number        | True  | 30                  | Height of the Entity
+prop.width     | Number        | True  | 30                  | Width of the Entity
+prop.vel       | Vector Object | True  | `KUSPI.vector(0,0)` | Velocity in X and Y of the Entity
+prop.anchor    | Vector Object | True  | `KUSPI.vector(0,0)` | Anchor point of the Entity (between 0 and 1)
+prop.degree    | Number        | True  | 0                   | Angle in degree of the Entity
+prop.radian    | Number        | True  | 0                   | Angle in radian of the Entity
+prop.gravity   | Boolean       | True  | False               | Wether or not the gravity is applied
+prop.collision | Boolean       | True  | True                | Wether or not the collisions are applied
+
+#### \<Entity\>.setProp({pos, width, height, anchor, degree, radian})
+Set new value to the pos, width, height, anchor point, degree and/or radian of the Entity
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+porp.pos       | Vector Object | True  | Current Value       | Change the position of the Container
+porp.width     | Number        | True  | Current Value       | Change the width of the Container
+porp.height    | Number        | True  | Current Value       | Change the height of the Container
+porp.anchor    | Vector Object | True  | Current Value       | Change the anchor point of the Container
+porp.degree    | Number        | True  | Current Value       | Change the degree of the Container
+porp.radian    | Number        | True  | Current Value       | Change the radian of the Container
+
+#### \<Entity\>.anim(name, fps)
+Texture or animate a sprite (see KUSPI.Texture)
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+name           | String        | False | -                   | Name of the texture and the animation (eg.: 'texture:animation')
+fps            | Number        | True  | 0                   | Number of fps for the animation
+
+### KUSPI.Texture({name, src, anim, sprites})
+Create a Texture
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+prop.name      | String        | False | -                   | Name of the Texture
+prop.src       | String        | False | -                   | Src of the image
+prop.sprites   | Object        | False | -                   | List of sprites created from the image
+prop.anim      | Object        | False | -                   | List of animation created from the sprites
+
+Exemple :
+
+```javascript
+new KUSPI.Texture({
+    name:'Exemple',
+    src:'image.png',
+    sprites:{
+        s1:{
+            pos:KUSPI.vector(0, 0),
+            height:200,
+            width:200
+        },
+        s2:{
+            pos:KUSPI.vector(200, 0),
+            height:200,
+            width:200
+        }
+    },
+    anim:{
+        test:['s1', 's2']
+    }
+});
+```
+
+### KUSPI.vector(x, y)
+Create a Vector Object
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+x              | Number        | False | -                   | Position in X
+y              | Number        | False | -                   | Position in Y
+
+### <vector>.add(x, y)
+Add to the vector
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+x              | Number        | False | -                   | Position in X
+y              | Number        | False | -                   | Position in Y
+
+### <vector>.sub(x, y)
+Substring to the vector
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+x              | Number        | False | -                   | Position in X
+y              | Number        | False | -                   | Position in Y
+
+### <vector>.mult(x, y)
+Multiply to the vector
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+x              | Number        | False | -                   | Position in X
+y              | Number        | False | -                   | Position in Y
+
+### <vector>.div(x, y)
+Divide to the vector
+
+Parameters:
+
+Name           | Type          | Opt.  | Default             | Description
+----           | ----          | ----  | -------             | -----------
+x              | Number        | False | -                   | Position in X
+y              | Number        | False | -                   | Position in Y
