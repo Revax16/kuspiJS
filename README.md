@@ -1,5 +1,5 @@
 # KuspiJS
-Un JS game Engine
+A JS game Engine inspired by MelonJS and StageJS
 
 ## Example
 Basic Example
