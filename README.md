@@ -196,7 +196,7 @@ Name           | Type          | Opt.  | Default             | Description
 x              | Number        | False | -                   | Position in X
 y              | Number        | False | -                   | Position in Y
 
-### <vector>.add(x, y)
+### \<vector\>.add(x, y)
 Add to the vector
 
 Parameters:
@@ -206,7 +206,7 @@ Name           | Type          | Opt.  | Default             | Description
 x              | Number        | False | -                   | Position in X
 y              | Number        | False | -                   | Position in Y
 
-### <vector>.sub(x, y)
+### \<vector\>.sub(x, y)
 Substring to the vector
 
 Parameters:
@@ -216,7 +216,7 @@ Name           | Type          | Opt.  | Default             | Description
 x              | Number        | False | -                   | Position in X
 y              | Number        | False | -                   | Position in Y
 
-### <vector>.mult(x, y)
+### \<vector\>.mult(x, y)
 Multiply to the vector
 
 Parameters:
@@ -226,7 +226,7 @@ Name           | Type          | Opt.  | Default             | Description
 x              | Number        | False | -                   | Position in X
 y              | Number        | False | -                   | Position in Y
 
-### <vector>.div(x, y)
+### \<vector\>.div(x, y)
 Divide to the vector
 
 Parameters:
