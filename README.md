@@ -6,7 +6,7 @@ Basic Example
 
 ```javascript
 var game = new KUSPI.Game();
-game.setView(width, height, parent); // Défaut => width:600, height:400, parent:document.body
+game.setView(width, height, parent);            // Défaut => width:600, height:400, parent:document.body
 
 var container, player;
 function setup () {
@@ -31,12 +31,12 @@ function setup () {
 
 function update() {                             // À chaque frame
     if (KUSPI.inputs.KEY(65)) {                 // On regarde si la touche avec le keyCode 65 en enfoncé
-        player.vel.x = -4;                           // Si oui on met la velocité à -4
+        player.vel.x = -4;                      // Si oui on met la velocité à -4
     } else if (KUSPI.inputs.KEY(68)) {          // On regarde si la touche avec le keyCode 68 en enfoncé
-        player.vel.x = 4;                            // Si oui on met la velocité à 4
-    } else player.vel.x = 0;                         // Sinon, on met la velocité à 0
+        player.vel.x = 4;                       // Si oui on met la velocité à 4
+    } else player.vel.x = 0;                    // Sinon, on met la velocité à 0
 
-    KUSPI.renderer(container);                    // On affiche le container
+    KUSPI.renderer(container);                  // On affiche le container
 }
 ```
 
