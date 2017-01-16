@@ -31,10 +31,10 @@ function setup () {
 
 function update() {                             // À chaque frame
     if (KUSPI.inputs.KEY(65)) {                 // On regarde si la touche avec le keyCode 65 en enfoncé
-        p.vel.x = -4;                           // Si oui on met la velocité à -4
+        player.vel.x = -4;                           // Si oui on met la velocité à -4
     } else if (KUSPI.inputs.KEY(68)) {          // On regarde si la touche avec le keyCode 68 en enfoncé
-        p.vel.x = 4;                            // Si oui on met la velocité à 4
-    } else p.vel.x = 0;                         // Sinon, on met la velocité à 0
+        player.vel.x = 4;                            // Si oui on met la velocité à 4
+    } else player.vel.x = 0;                         // Sinon, on met la velocité à 0
 
     KUSPI.renderer(container);                    // On affiche le container
 }
